@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.gedoplan.showcase</groupId>
+  <artifactId>aot-benchmark-parent</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <name>AOT Benchmark – Parent</name>
+  <description>
+    Demonstriert JEP 483 (Ahead-of-Time Class Loading &amp; Linking) und
+    JEP 514 (AOT Command-Line Ergonomics) im Vergleich zwischen
+    Spring Boot 4 und Quarkus 3.32 (JVM-Mode).
+  </description>
+
+  <modules>
+    <module>spring-app</module>
+    <module>quarkus-app</module>
+  </modules>
+
+  <properties>
+    <java.version>25</java.version>
+    <maven.compiler.source>25</maven.compiler.source>
+    <maven.compiler.target>25</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring-boot.version>4.0.3</spring-boot.version>
+    <quarkus.platform.version>3.32.1</quarkus.platform.version>
+  </properties>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <!-- Maven Compiler zentral konfigurieren -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+          <configuration>
+            <release>${java.version}</release>
+            <encoding>${project.build.sourceEncoding}</encoding>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>
