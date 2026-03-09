@@ -40,12 +40,14 @@ class BenchmarkController {
 
   /// Shutdown-Endpoint analog zu Quarkus /api/shutdown. Fährt den ApplicationContext
   /// sauber herunter → alle Shutdown-Hooks laufen durch → JEP-514-Cache wird auf Disk geschrieben.
-  /// Kein Actuator erforderlich.
+  ///
+  /// Auf den Actuator wurde verzichtet, da Quarkus keinen vergleichbaren Mechanismus bietet
+  /// und die Voraussetzungen in möglichst allen Belangen die gleichen sein sollen.
   @PostMapping("/shutdown")
   public String shutdown() {
     Thread.ofVirtual().start(() -> {
       try {
-        Thread.sleep(100);
+        Thread.sleep(200);
       } catch (InterruptedException ignored) {
       }
       context.close();

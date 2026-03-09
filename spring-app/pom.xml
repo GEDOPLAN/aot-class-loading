@@ -50,7 +50,7 @@
           </execution>
           <!--
             Spring Boot AOT-Processing: berechnet zur Build-Zeit vor, was
-            sonst zur Laufzeit via Reflection ermittelt würde:
+            sonst zur Laufzeit via Reflection ermittelt werden würde:
               - BeanDefinition-Registrierungen
               - Proxy-Klassen
               - Reflection-Metadaten für @Configuration-Klassen

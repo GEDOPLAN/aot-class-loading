@@ -35,24 +35,26 @@ aot-benchmark/
 
 ## Schritt 1: Bauen
 
-```powershell
-cd spring-app
+```
 mvn package
-cd ../quarkus-app
-mvn package
-cd ..
 ```
 
 ## Schritt 2: Benchmark ausführen
 
-```powershell
-.\benchmark.ps1
 ```
+ Windows: benchmarks.ps1
+ 
+ Linux, macOS: benchmark.sh
+
+ alle Plattformen:
+ java benchmark.java
+```
+ 
 
 Das Script:
 1. Erstellt AOT-Caches mit **JEP 514** (`-XX:AOTCacheOutput`) – Ein-Schritt-Workflow
 2. Startet jede App-Variante und misst die **Time-to-First-Request** (TTFR)
-3. Wiederholt jede Messung 3× und berechnet den Median
+3. Wiederholt jede Messung 10× und berechnet den Median
 4. Gibt eine Vergleichstabelle aus
 
 ## AOT-Workflow (JEP 514 vs. JEP 483)
