@@ -20,8 +20,9 @@ aot-benchmark/
 │   ├── pom.xml
 │   └── src/main/java/de/gedoplan/showcase/aot/
 │       └── QuarkusBenchmarkResource.java
-└── benchmark.ps1        Benchmark-Script (Windows Powershell)
-└── benchmark.sh         Benchmark-Script (Linux, macOS)
+├── benchmark.ps1        Benchmark-Script (Windows Powershell)
+├── benchmark.sh         Benchmark-Script (Linux, macOS)
+└── benchmark.java       Benchmark-Script (alle Plattformen)
 ```
 
 ## Endpoints
